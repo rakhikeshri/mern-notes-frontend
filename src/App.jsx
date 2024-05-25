@@ -7,7 +7,7 @@ import Home from './components/Home'
 import CreateNoteForm from './components/CreateNoteForm';
 import { useSelector } from 'react-redux';
 import NotesBody from './components/NotesBody';
-import Login from './components/auth/login';
+import Login from './components/auth/Login';
 import Signup from './components/auth/Signup';
 import RequireAuth from './components/auth/RequireAuth';
 
