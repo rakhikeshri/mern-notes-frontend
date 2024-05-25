@@ -27,8 +27,6 @@ const useUserActions = () => {
 
       navigate('/notes');
 
-      // console.log(response)
-
     } catch (error) {
       console.log('err', error)
       dispatch(setLoggedIn(false))
@@ -40,8 +38,6 @@ const useUserActions = () => {
       const response = await axios.get(`${api}/check-auth`);
       console.log('response', response?.data);
       if (response.status === 200) {
-        // const { user } = response.data; // Assuming the user object is returned in the response
-        // console.log('User:', user);
         dispatch(setLoggedIn(true));
       } else {
         dispatch(setLoggedIn(false));
@@ -54,9 +50,8 @@ const useUserActions = () => {
 
   const logout = async () => {
     try {
-      await axios.get(`${api}/logout`); // Send request to logout endpoint
-      // console.log('res', res)
-      dispatch(setLoggedIn(false)); // Dispatch action to update Redux state
+      await axios.get(`${api}/logout`); 
+      dispatch(setLoggedIn(false)); 
     } catch (error) {
       console.error('Error logging out:', error);
     }
