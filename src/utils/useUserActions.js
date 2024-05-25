@@ -55,7 +55,6 @@ const useUserActions = () => {
   const logout = async () => {
     try {
       await axios.get(`${api}/logout`); // Send request to logout endpoint
-
       // console.log('res', res)
       dispatch(setLoggedIn(false)); // Dispatch action to update Redux state
     } catch (error) {
