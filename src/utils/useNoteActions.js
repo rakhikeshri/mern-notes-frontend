@@ -21,12 +21,11 @@ const useNoteActions = () => {
   const fetchNotes = async () => {
     try {
       const response = await axios.get(`${api}/notes`);
-      const fetchedFilteredData = response?.data?.notes.filter(note => note.title.includes(searchNoteQuery))
+      const fetchedFilteredData = response?.data?.notes?.filter(note => note.title.includes(searchNoteQuery))
 
       dispatch(setNotes(fetchedFilteredData));
     } catch (error) {
       console.error('Error fetching notes:', error);
-      // Handle error (e.g., show error message to user)
     }
   };
 
